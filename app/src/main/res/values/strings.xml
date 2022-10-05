@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Tasca 1 MiquelMontero DiegoBurgos</string>
+    <string-array name="lenguajes">
+        <item>Seleccione</item>
+        <item>Segons</item>
+        <item>Minuts</item>
+        <item>Hores</item>
+        <item>Anys</item>
+    </string-array>
 </resources>
