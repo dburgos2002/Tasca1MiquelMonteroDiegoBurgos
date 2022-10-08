@@ -24,7 +24,13 @@ public class MainActivity extends AppCompatActivity {
     final double[] minImpr = {0};
     final double[] horImpr = {0};
     final double[] anyImpr = {0};
-    final String [] unitats = getResources().getStringArray(R.array.lenguajes);
+
+    //Traducció unitats
+    String TSegons = "";
+    String TMinuts = "";
+    String THores = "";
+    String TAnys = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
         //Creem les variables en les que es guardarà tant la unitat com el valor introduït
         final double[] valor = {0};
         final String[] unitat = {""};
+        final String [] unitats = getResources().getStringArray(R.array.lenguajes);
+
+        //Assignem les traduccions a la variable
+        TSegons = unitats[1];
+        TMinuts = unitats[2];
+        THores = unitats[3];
+        TAnys = unitats[4];
 
         //Assignem la vista
         super.onCreate(savedInstanceState);
@@ -85,20 +98,20 @@ public class MainActivity extends AppCompatActivity {
     //Funció per a calcular els segons
     public double calcularSec(String unitat, double valor) {
 
+        //Comprovem que el número sigui positiu
         if (valor >= 0){
-            //Fem servir un switch que depenent de la unitat retorna un resultat o un altre
-            switch (unitat) {
-                case "Segons":
-                    return valor;
-                case "Minuts":
-                    return valor*60;
-                case "Hores":
-                    return valor*3600;
-                case "Anys":
-                    return valor*31536000;
-                default:
-                    Toast.makeText(getApplicationContext(), "Selecciona una unitat", Toast.LENGTH_SHORT).show();
-                    return 0;
+            //Fem servir una serie de else if que depenent de la unitat retorna un resultat o un altre
+            if (unitat.equals(TSegons)) {
+                return valor;
+            } else if (unitat.equals(TMinuts)) {
+                return valor*60;
+            } else if (unitat.equals(THores)) {
+                return valor*3600;
+            } else if (unitat.equals(TAnys)) {
+                return valor*31536000;
+            } else {
+                Toast.makeText(getApplicationContext(), "Selecciona una unitat", Toast.LENGTH_SHORT).show();
+                return 0;
             }
         } else {
             Toast.makeText(getApplicationContext(), "El temps no pot ser negatiu", Toast.LENGTH_SHORT).show();
@@ -109,65 +122,73 @@ public class MainActivity extends AppCompatActivity {
     //Funció per a calcular els minuts
     public double calcularMin(String unitat, double valor) {
 
-        //Fem servir un switch que depenent de la unitat retorna un resultat o un altre
-        switch (unitat) {
-            case "Segons":
+        //Comprovem que el número sigui positiu
+        if (valor >= 0){
+            //Fem servir una serie de else if que depenent de la unitat retorna un resultat o un altre
+            if (unitat.equals(TSegons)) {
                 return valor/60;
-            case "Minuts":
+            } else if (unitat.equals(TMinuts)) {
                 return valor;
-            case "Hores":
+            } else if (unitat.equals(THores)) {
                 return valor*60;
-            case "Anys":
+            } else if (unitat.equals(TAnys)) {
                 return valor*525600;
-            default:
-                //Generem un pop up per si l'usuari no ha indicat la unitat
+            } else {
                 Toast.makeText(getApplicationContext(), "Selecciona una unitat", Toast.LENGTH_SHORT).show();
                 return 0;
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "El temps no pot ser negatiu", Toast.LENGTH_SHORT).show();
+            return 0;
         }
-
     }
 
     //Funció per a calcular les hores
     public double calcularHor(String unitat, double valor) {
 
-        //Fem servir un switch que depenent de la unitat retorna un resultat o un altre
-        switch (unitat) {
-            case "Segons":
-                System.out.println("El resultado es: " + valor/3600);
+        //Comprovem que el número sigui positiu
+        if (valor >= 0){
+            //Fem servir una serie de else if que depenent de la unitat retorna un resultat o un altre
+            if (unitat.equals(TSegons)) {
                 return valor/3600;
-            case "Minuts":
+            } else if (unitat.equals(TMinuts)) {
                 return valor/60;
-            case "Hores":
+            } else if (unitat.equals(THores)) {
                 return valor;
-            case "Anys":
+            } else if (unitat.equals(TAnys)) {
                 return valor*8760;
-            default:
-                //Generem un pop up per si l'usuari no ha indicat la unitat
+            } else {
                 Toast.makeText(getApplicationContext(), "Selecciona una unitat", Toast.LENGTH_SHORT).show();
                 return 0;
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "El temps no pot ser negatiu", Toast.LENGTH_SHORT).show();
+            return 0;
         }
-
     }
 
     //Funció per a calcular els anys
     public double calcularAny(String unitat, double valor) {
 
-        //Fem servir un switch que depenent de la unitat retorna un resultat o un altre
-        switch (unitat) {
-            case "Segons":
+        //Comprovem que el número sigui positiu
+        if (valor >= 0){
+            //Fem servir una serie de else if que depenent de la unitat retorna un resultat o un altre
+            if (unitat.equals(TSegons)) {
                 return valor/31536000;
-            case "Minuts":
+            } else if (unitat.equals(TMinuts)) {
                 return valor/525600;
-            case "Hores":
+            } else if (unitat.equals(THores)) {
                 return valor/8760;
-            case "Anys":
+            } else if (unitat.equals(TAnys)) {
                 return valor;
-            default:
-                //Generem un pop up per si l'usuari no ha indicat la unitat
+            } else {
                 Toast.makeText(getApplicationContext(), "Selecciona una unitat", Toast.LENGTH_SHORT).show();
                 return 0;
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "El temps no pot ser negatiu", Toast.LENGTH_SHORT).show();
+            return 0;
         }
-
     }
 
 }

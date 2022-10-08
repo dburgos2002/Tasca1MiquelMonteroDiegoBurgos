@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Task 1 MiquelMontero DiegoBurgos</string>
+    <string name="titulo">Time unit converter</string>
+    <string name="valor">Value</string>
+    <string name="subtitol">List of results</string>
+    <string name="segons">Seconds</string>
+    <string name="minuts">Minutes</string>
+    <string name="hores">Hours</string>
+    <string name="anys">Years</string>
+    <string name="boto">Convert</string>
+    <string-array name="lenguajes">
+        <item>Select</item>
+        <item>Seconds</item>
+        <item>Minutes</item>
+        <item>Hours</item>
+        <item>Years</item>
+    </string-array>
+</resources>

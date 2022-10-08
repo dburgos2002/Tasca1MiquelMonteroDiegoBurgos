@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Actividad 1 MiquelMontero DiegoBurgos</string>
+    <string name="titulo">Conversor de unidades de tiempo</string>
+    <string name="valor">Valor</string>
+    <string name="subtitol">Lista de resultados</string>
+    <string name="segons">Segundos</string>
+    <string name="minuts">Minutos</string>
+    <string name="hores">Horas</string>
+    <string name="anys">Años</string>
+    <string name="boto">Convertir</string>
+    <string-array name="lenguajes">
+        <item>Seleccione</item>
+        <item>Segundos</item>
+        <item>Minutos</item>
+        <item>Horas</item>
+        <item>Años</item>
+    </string-array>
+</resources>
