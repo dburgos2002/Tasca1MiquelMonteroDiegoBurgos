@@ -5,6 +5,9 @@
     <string name="subtitol">Llistat de resultats</string>
     <string name="segons">Segons</string>
     <string name="minuts">Minuts</string>
+    <string name="hores">Hores</string>
+    <string name="anys">Anys</string>
+    <string name="boto">Convertir</string>
     <string-array name="lenguajes">
         <item>Seleccioni</item>
         <item>Segons</item>
