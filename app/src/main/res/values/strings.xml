@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Tasca 1 MiquelMontero DiegoBurgos</string>
+    <string name="titulo">Conversor d\'unitats de temps</string>
+    <string name="valor">Valor</string>
+    <string name="subtitol">Llistat de resultats</string>
+    <string name="segons">Segons</string>
+    <string name="minuts">Minuts</string>
     <string-array name="lenguajes">
-        <item>Seleccione</item>
+        <item>Seleccioni</item>
         <item>Segons</item>
         <item>Minuts</item>
         <item>Hores</item>
